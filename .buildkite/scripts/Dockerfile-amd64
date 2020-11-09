@@ -20,6 +20,7 @@ RUN tar -zxvf _build/prod/rel/*/*.tar.gz -C /opt/rel
 RUN sed -i 's/^\s*{key,/%{key,/' /opt/rel/releases/0.1.0/sys.config
 RUN sed -i 's/{use_ebus, true},/{use_ebus, false},/' /opt/rel/releases/0.1.0/sys.config
 RUN sed -i 's/{radio_device, { {127,0,0,1}, 1680,/{radio_device, { {0,0,0,0}, 1680,/' /opt/rel/releases/0.1.0/sys.config
+RUN sed -i 's/{log_root, "/var/log/miner"},/{log_root, "/var/data/log"},/' /opt/rel/releases/0.1.0/sys.config
 RUN mkdir -p /opt/rel/update
 RUN wget https://github.com/helium/blockchain-api/raw/master/priv/prod/genesis
 RUN cp genesis /opt/rel/update/genesis
