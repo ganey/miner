@@ -90,7 +90,8 @@ init([SigFun, ECDHFun]) ->
         EbusServer ++
         OnionServer ++
         [?WORKER(miner_poc_statem, [POCOpts])] ++
-        [?SUP(sibyl_sup, [])]
+        [?SUP(sibyl_sup, [])],
+
     {ok, {SupFlags, ChildSpecs}}.
 
 
