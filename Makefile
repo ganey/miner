@@ -60,6 +60,5 @@ grpc:
 	REBAR_CONFIG="config/grpc_client_gen.config" $(REBAR) grpc gen
 
 $(grpc_services_directory):
-	@echo "grpc service directory $(directory) does not exist, generating services"
-	$(REBAR) get-deps
-	make grpc
+	@echo "grpc service directory $(directory) does not exist, will generate services"
+	$(REBAR) get-deps; mkdir -p _build/default/lib/miner/ebin; make grpc
