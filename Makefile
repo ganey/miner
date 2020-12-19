@@ -56,7 +56,7 @@ devrelease: | $(grpc_services_directory)
 	$(REBAR) as dev release
 
 grpc:
-	REBAR_CONFIG="config/grpc_server_gen.config" $(REBAR) grpc gen \
+	REBAR_CONFIG="config/grpc_server_gen.config" $(REBAR) grpc gen; \
 	REBAR_CONFIG="config/grpc_client_gen.config" $(REBAR) grpc gen
 
 $(grpc_services_directory):
