@@ -52,7 +52,7 @@ devrel:
 	$(REBAR) as testdev, miner7 release -n miner7
 	$(REBAR) as testdev, miner8 release -n miner8
 
-devrelease:
+devrelease: | $(grpc_services_directory)
 	$(REBAR) as dev release
 
 grpc:
@@ -61,6 +61,4 @@ grpc:
 
 $(grpc_services_directory):
 	@echo "grpc service directory $(directory) does not exist, will generate services"
-	$(REBAR) get-deps
-	mkdir -p _build/default/lib/miner/ebin
-	$(MAKE) grpc
+	$(REBAR) get-deps;mkdir -p _build/default/lib/miner/ebin;$(MAKE) grpc
