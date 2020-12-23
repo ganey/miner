@@ -27,7 +27,7 @@
     jsx,
     kvc,
     longfi,
-    sibyl,
+    grpcbox,
     grpc_lib
    ]},
   {included_applications, [blockchain, sibyl]},
